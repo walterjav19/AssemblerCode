@@ -4,7 +4,7 @@ _start:
     // CARGAMOS EL MENSAJE EN PANTALLA
     mov x0, 1       // set stdout
     ldr x1, =msg    // load msg
-    mov x2, 14      // size msg
+    mov x2, 16      // size msg
     mov x8, 64      // write syscall_num
     svc 0           // generic syscall
 
@@ -26,7 +26,7 @@ _start:
     EVEN_NUMBER:
         mov x0, 1       // set stdout
         ldr x1,=par     // load msg
-        mov x2, 7      // size msg
+        mov x2, 8      // size msg
         mov x8, 64      // write syscall_num
         svc 0
         b CLOSE
