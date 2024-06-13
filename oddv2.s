@@ -25,7 +25,7 @@ _start:
 
     EVEN_NUMBER:
         mov x0, 1       // set stdout
-        ldr x1,=msg1     // load msg
+        ldr x1,=par     // load msg
         mov x2, 7      // size msg
         mov x8, 64      // write syscall_num
         svc 0
@@ -33,13 +33,13 @@ _start:
 
     ODD_NUMBER:
         mov x0, 1       // set stdout
-        ldr x1,=msg2     // load msg
+        ldr x1,=impar     // load msg
         mov x2, 8      // size msg
         mov x8, 64      // write syscall_num
         svc 0
     CLOSE:
         mov x0, 0       // set stdout
-        mov x8, 93    // load msg
+        ldr x8, 93    // load msg
         svc 0
     
 
@@ -47,8 +47,7 @@ _start:
 .data
 msg:
    msg:   .ascii "Enter a text: "
-   msg1:  .ascii "Is odd\n"
-   msg2: .ascii "Is even\n"
-.bss
+   impar:  .ascii "Is odd\n"
+   par: .ascii "Is even\n"
 buf:
   input:  .space 2
