@@ -39,7 +39,7 @@ _start:
         svc 0
     CLOSE:
         mov x0, 0       // set stdout
-        ldr x8, 93    // load msg
+        mov x8, 93    // load msg
         svc 0
     
 
@@ -49,5 +49,6 @@ msg:
    msg:   .ascii "Enter a text: "
    msg1:  .ascii "Is odd\n"
    msg2: .ascii "Is even\n"
+.bss
 buf:
   input:  .space 2
